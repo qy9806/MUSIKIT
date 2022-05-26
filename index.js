@@ -1,3 +1,4 @@
+alert('press the key to play! ')
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
 for (var i = 0; i < numberOfDrumButtons; i++) {
@@ -27,37 +28,37 @@ function makeSound(key) {
 
   switch (key) {
     case "z":
-      var tom1 = new Audio("sounds/tom-1.mp3");
+      var tom1 = new Audio("public/sounds/tom-1.mp3");
       tom1.play();
       break;
 
     case "x":
-      var tom2 = new Audio("sounds/tom-2.mp3");
+      var tom2 = new Audio("public/sounds/tom-2.mp3");
       tom2.play();
       break;
 
     case "c":
-      var tom3 = new Audio('sounds/tom-3.mp3');
+      var tom3 = new Audio('public/sounds/tom-3.mp3');
       tom3.play();
       break;
 
     case "v":
-      var tom4 = new Audio('sounds/tom-4.mp3');
+      var tom4 = new Audio('public/sounds/tom-4.mp3');
       tom4.play();
       break;
 
     case "b":
-      var snare = new Audio('sounds/snare.mp3');
+      var snare = new Audio('public/sounds/snare.mp3');
       snare.play();
       break;
 
     case "n":
-      var crash = new Audio('sounds/crash.mp3');
+      var crash = new Audio('public/sounds/crash.mp3');
       crash.play();
       break;
 
     case "m":
-      var kick = new Audio('sounds/kick-bass.mp3');
+      var kick = new Audio('public/sounds/kick-bass.mp3');
       kick.play();
       break;
 
@@ -85,11 +86,12 @@ let blackKeys = ["KeyW", "KeyE", "KeyT", "KeyY", "KeyU"]
 
 document.addEventListener("keydown", function (piano) {
     if (whiteKeys.includes(piano.code)) {
-        let pianokey = new Audio("white_keys/" + piano.code.replace("Key", "") + ".mp3");
+        let pianokey = new Audio("public/white_keys/" + piano.code.replace("Key", "") + ".mp3");
         pianokey.play();
+
         console.log("The '" + piano.code.replace("Key", "") + "' key is pressed");
     } else if (blackKeys.includes(piano.code)) {
-        let pianokey = new Audio("black_keys/" + piano.code.replace("Key", "") + ".mp3");
+        let pianokey = new Audio("public/black_keys/" + piano.code.replace("Key", "") + ".mp3");
         pianokey.play();
         console.log("The '" + piano.code.replace("key", "") + "' key is pressed");
     } else console.log("The '" + piano.code.replace("Key", "") + "' key is not on the piano");
